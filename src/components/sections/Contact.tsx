@@ -61,13 +61,13 @@ export function Contact() {
                     </div>
                   </a>
                   
-                  <a href="mailto:hello@futurecents.co.za" className="flex items-center gap-4 group">
+                  <a href="mailto:enquiries@futurecents.co.za" className="flex items-center gap-4 group">
                     <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center group-hover:bg-primary-foreground group-hover:text-primary transition-colors">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <p className="text-sm text-primary-foreground/60 font-medium">Email</p>
-                      <p className="font-semibold text-lg">hello@futurecents.co.za</p>
+                      <p className="font-semibold text-lg">enquiries@futurecents.co.za</p>
                     </div>
                   </a>
                   
