@@ -70,8 +70,8 @@ export function Contact() {
                       <p className="font-semibold text-lg">enquiries@futurecents.co.za</p>
                     </div>
                   </a>
-                 
-                  </div>
+                  
+              
                 </div>
               </div>
 
