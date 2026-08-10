@@ -1,8 +1,11 @@
 # FutureCents
 
-FutureCents is a standalone React + Vite marketing website for an accounting and compliance partner serving South African small businesses.
+FutureCents is a standalone React + Vite marketing website for an accounting
+and compliance partner serving South African small businesses.
 
-This is the GitHub-ready version of the site. It does not require Replit, a monorepo, a database, an API server, or environment secrets.
+This folder is intentionally self-contained. It does not require Replit
+packages, workspace aliases, a database, an API server, or environment
+secrets.
 
 ## Run locally
 
@@ -13,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Other commands:
+Open the local URL printed by Vite. The other useful commands are:
 
 ```bash
 npm run typecheck
@@ -25,10 +28,18 @@ The production files are generated in `dist/public`.
 
 ## Publish with GitHub Pages
 
-Enable GitHub Pages for the repository and choose **GitHub Actions** as the source. The included workflow publishes the site whenever you push to `main`.
+The repository includes a GitHub Actions workflow at
+`.github/workflows/futurecents-pages.yml`. Enable GitHub Pages for the
+repository and choose **GitHub Actions** as the source. Every push to
+`main` will build and publish the site.
 
-For a project-page URL such as `https://your-name.github.io/your-repo/`, the workflow configures the correct base path automatically.
+For a project-page URL such as `https://your-name.github.io/your-repo/`, the
+workflow passes the repository path to Vite automatically. Local development
+continues to use `/` as its base path.
 
 ## Contact form
 
-The enquiry form validates fields and shows a success state in the browser. It does not send email or save submissions because this is a static site. Connect it to a form provider or your own backend when you are ready to receive enquiries.
+The enquiry form currently validates the fields and shows a success state in
+the browser. It does not send email or save submissions because this is a
+static site. Connect it to a form provider or your own backend when you are
+ready to receive enquiries.
