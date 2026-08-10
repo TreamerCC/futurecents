@@ -63,7 +63,7 @@ const legalDocuments: Record<
       },
       {
         heading: "Contact",
-        body: "For privacy questions or requests, contact hello@futurecents.co.za. This draft policy should be reviewed and updated to reflect the final tools, providers, retention periods, and business processes used by FutureCents.",
+        body: "For privacy questions or requests, contact enquiries@futurecents.co.za. This draft policy should be reviewed and updated to reflect the final tools, providers, retention periods, and business processes used by FutureCents.",
       },
     ],
   },
@@ -90,7 +90,7 @@ const legalDocuments: Record<
       },
       {
         heading: "Questions and complaints",
-        body: "Please contact hello@futurecents.co.za first so we can try to resolve your concern. You may also contact the South African Information Regulator where you believe your personal information rights have not been respected.",
+        body: "Please contact enquiries@futurecents.co.za first so we can try to resolve your concern. You may also contact the South African Information Regulator where you believe your personal information rights have not been respected.",
       },
     ],
   },

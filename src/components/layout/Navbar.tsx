@@ -80,7 +80,7 @@ export function Navbar() {
           </div>
           <div className="flex items-center gap-3">
             <Button asChild variant="outline" className="gap-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366]/10 hover:text-[#25D366]">
-              <a href="https://wa.me/27820000000" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/27816733268" target="_blank" rel="noreferrer">
                 <MessageSquare className="w-4 h-4" /> WhatsApp
               </a>
             </Button>
@@ -114,7 +114,7 @@ export function Navbar() {
             </button>
           ))}
           <Button asChild variant="outline" className="w-full mt-2 border-[#25D366] text-[#25D366]">
-            <a href="https://wa.me/27820000000" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/27816733268" target="_blank" rel="noreferrer">
               <MessageSquare className="w-4 h-4 mr-2" /> WhatsApp Us
             </a>
           </Button>
