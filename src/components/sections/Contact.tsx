@@ -70,12 +70,7 @@ export function Contact() {
                       <p className="font-semibold text-lg">enquiries@futurecents.co.za</p>
                     </div>
                   </a>
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                   
+                 
                   </div>
                 </div>
               </div>
