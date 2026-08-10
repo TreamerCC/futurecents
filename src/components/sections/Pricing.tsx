@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Basic",
     description: "Perfect for freelancers and solo founders starting out.",
-    monthlyPrice: 800,
+    monthlyPrice: 1000,
     features: [
       "Monthly bookkeeping (up to 50 txns)",
       "Basic income & expense tracking",
@@ -31,7 +31,7 @@ const tiers = [
   {
     name: "Professional",
     description: "Full outsourced finance function for established teams.",
-    monthlyPrice: 5000,
+    monthlyPrice: 5500,
     features: [
       "Unlimited monthly bookkeeping",
       "Full tax compliance (VAT, PAYE)",

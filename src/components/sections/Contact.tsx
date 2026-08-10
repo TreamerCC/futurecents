@@ -51,23 +51,23 @@ export function Contact() {
                 </p>
                 
                 <div className="space-y-8">
-                  <a href="https://wa.me/27820000000" target="_blank" rel="noreferrer" className="flex items-center gap-4 group">
+                  <a href="https://wa.me/27816733268" target="_blank" rel="noreferrer" className="flex items-center gap-4 group">
                     <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center group-hover:bg-[#25D366] group-hover:text-white transition-colors">
                       <MessageSquare className="w-5 h-5" />
                     </div>
                     <div>
                       <p className="text-sm text-primary-foreground/60 font-medium">WhatsApp Us</p>
-                      <p className="font-semibold text-lg">+27 82 000 0000</p>
+                      <p className="font-semibold text-lg">+27 81 673 3268</p>
                     </div>
                   </a>
                   
-                  <a href="mailto:hello@futurecents.co.za" className="flex items-center gap-4 group">
+                  <a href="mailto:enquiries@futurecents.co.za" className="flex items-center gap-4 group">
                     <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center group-hover:bg-primary-foreground group-hover:text-primary transition-colors">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <p className="text-sm text-primary-foreground/60 font-medium">Email</p>
-                      <p className="font-semibold text-lg">hello@futurecents.co.za</p>
+                      <p className="font-semibold text-lg">enquiries@futurecents.co.za</p>
                     </div>
                   </a>
                   
@@ -85,7 +85,7 @@ export function Contact() {
 
               <div className="mt-16 relative z-10">
                 <Button asChild className="bg-[#25D366] text-white hover:bg-[#20b858] border-none text-base h-12 gap-2 w-full sm:w-auto mb-3">
-                  <a href="https://wa.me/27820000000" target="_blank" rel="noreferrer">
+                  <a href="https://wa.me/27816733268" target="_blank" rel="noreferrer">
                     <MessageSquare className="w-5 h-5" /> Chat on WhatsApp Now
                   </a>
                 </Button>
