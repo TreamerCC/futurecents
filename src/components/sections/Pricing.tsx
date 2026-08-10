@@ -160,9 +160,9 @@ export function Pricing() {
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: "Company Registration", price: "R1,500 - R3,500" },
+              { name: "Company Registration", price: "R1,800" },
               { name: "CIPC Annual Return", price: "R650" },
-              { name: "Tax Clearance", price: "350" },
+              { name: "Tax Clearance", price: "R350" },
               { name: "VAT Registration", price: "R1,800" }
             ].map((addon, i) => (
               <div key={i} className="flex justify-between items-center p-4 bg-white rounded-lg border border-border hover:border-primary transition-colors group">
