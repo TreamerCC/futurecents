@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Basic",
     description: "Perfect for freelancers and solo founders starting out.",
-    monthlyPrice: 1000,
+    monthlyPrice: 1500,
     features: [
       "Monthly bookkeeping (up to 50 txns)",
       "Basic income & expense tracking",
@@ -18,7 +18,7 @@ const tiers = [
   {
     name: "Standard",
     description: "The sweet spot for growing VAT-registered SMEs.",
-    monthlyPrice: 2500,
+    monthlyPrice: 3000,
     popular: true,
     features: [
       "Monthly bookkeeping (up to 200 txns)",
@@ -163,7 +163,7 @@ export function Pricing() {
               { name: "Company Registration", price: "R1,800" },
               { name: "CIPC Annual Return", price: "R650" },
               { name: "Tax Clearance", price: "R500" },
-              { name: "BEE Affidavit", price: "R750" }
+              { name: "VAT Registration", price: "R2,500" }
             ].map((addon, i) => (
               <div key={i} className="flex justify-between items-center p-4 bg-white rounded-lg border border-border hover:border-primary transition-colors group">
                 <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{addon.name}</span>
