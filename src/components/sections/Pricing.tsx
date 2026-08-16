@@ -20,7 +20,7 @@ const packages = [
     name: "Tax Lite",
     description:
       "Essential tax support for individuals, freelancers, and small businesses.",
-    price: 1,500,
+    price: 1500,
     billing: "month",
     checkoutUrl: checkoutLinks.taxLite,
     features: [
@@ -34,7 +34,7 @@ const packages = [
     name: "Bookkeeping Lite",
     description:
       "Practical monthly bookkeeping for businesses that need clearer financial records.",
-    price: 2,500,
+    price: 2500,
     billing: "month",
     checkoutUrl: checkoutLinks.bookkeepingLite,
     features: [
@@ -49,7 +49,7 @@ const packages = [
     name: "Full SME Support",
     description:
       "A complete outsourced finance service for growing small and medium businesses.",
-    price: 5,500,
+    price: 5500,
     billing: "month",
     checkoutUrl: checkoutLinks.fullSmeSupport,
     features: [
@@ -61,6 +61,40 @@ const packages = [
       "Priority WhatsApp support",
       "Free templates, cash-flow tools, and tax pack",
     ],
+  },
+];
+const directOneOffServices = [
+  {
+    name: "VAT or PAYE Registration Support",
+    price: 2000,
+    priceLabel: "once-off",
+    description:
+      "Support with the relevant registration process and required business information.",
+    checkoutUrl: "https://whop.com/future-cents/vat-or-paye-registration-support/",
+  },
+  {
+    name: "CIPC Amend Company or Director Details",
+    price: 550,
+    priceLabel: "once-off",
+    description:
+      "Update company or director information through the appropriate CIPC process.",
+    checkoutUrl: "https://whop.com/future-cents/cipc-amend-company-or-director-details",
+  },
+  {
+    name: "Tax Clearance Certificate",
+    price: 500,
+    priceLabel: "per certificate",
+    description:
+      "Assistance with obtaining a tax clearance certificate for your business needs.",
+    checkoutUrl: "https://whop.com/future-cents/tax-clearance-certificate/",
+  },
+  {
+    name: "Company Setup/Registration",
+    price: 2500,
+    priceLabel: "once-off",
+    description:
+      "Get your company setup started with practical support for the required process.",
+    checkoutUrl: "https://whop.com/future-cents/company-setup-registrations/",
   },
 ];
 
