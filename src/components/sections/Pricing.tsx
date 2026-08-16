@@ -20,7 +20,7 @@ const packages = [
     name: "Tax Lite",
     description:
       "Essential tax support for individuals, freelancers, and small businesses.",
-    price: 1500,
+    price: 1,500,
     billing: "month",
     checkoutUrl: checkoutLinks.taxLite,
     features: [
@@ -34,7 +34,7 @@ const packages = [
     name: "Bookkeeping Lite",
     description:
       "Practical monthly bookkeeping for businesses that need clearer financial records.",
-    price: 2500,
+    price: 2,500,
     billing: "month",
     checkoutUrl: checkoutLinks.bookkeepingLite,
     features: [
@@ -49,7 +49,7 @@ const packages = [
     name: "Full SME Support",
     description:
       "A complete outsourced finance service for growing small and medium businesses.",
-    price: 5500,
+    price: 5,500,
     billing: "month",
     checkoutUrl: checkoutLinks.fullSmeSupport,
     features: [
