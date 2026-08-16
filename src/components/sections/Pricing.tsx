@@ -100,9 +100,14 @@ const directOneOffServices = [
 
 const quoteServices = [
   {
-    name: "Company Amendments",
+    name: "Payroll Setup",
     description:
-      "Company changes and updates priced according to the work required.",
+      "Set up a practical payroll process based on your employee and business requirements.",
+  },
+  {
+    name: "Tax Return / ITR14",
+    description:
+      "Tax return support priced according to the complexity of your records and filing requirements.",
   },
   {
     name: "Annual Financial Statements",
@@ -110,14 +115,29 @@ const quoteServices = [
       "Financial statements prepared according to your business requirements.",
   },
   {
-    name: "Tax Return / ITR14",
+    name: "Invoice System Setup",
     description:
-      "Tax return assistance with pricing based on the complexity of your return.",
+      "Set up a cleaner process for quotes, invoices, payment tracking, and customer follow-ups.",
   },
   {
-    name: "Monthly Payroll",
+    name: "SARS Compliance Check",
     description:
-      "Payroll support priced according to your employee and payroll requirements.",
+      "Review your relevant tax obligations, deadlines, submissions, and outstanding compliance items.",
+  },
+  {
+    name: "Bookkeeping Setup",
+    description:
+      "Set up a practical bookkeeping structure for your business records and monthly reporting.",
+  },
+  {
+    name: "Year-End Finance Pack",
+    description:
+      "Prepare your records and supporting information for year-end reporting and tax work.",
+  },
+  {
+    name: "Budget and Pricing Review",
+    description:
+      "Review your pricing, expenses, margins, and expected income with a tailored finance review.",
   },
 ];
 function formatZar(amount: number) {
@@ -240,11 +260,65 @@ export function Pricing() {
             );
           })}
         </div>
+        <div className="mx-auto mt-24 max-w-6xl border-t border-border pt-16">
+  <div className="mb-10 text-center">
+    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+      Fixed-price services
+    </p>
+
+    <h3 className="text-3xl font-extrabold text-foreground">
+      Get help with a specific finance task.
+    </h3>
+
+    <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+      Choose a once-off service and pay securely through Whop.
+    </p>
+  </div>
+
+  <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+    {directOneOffServices.map((service) => (
+      <article
+        key={service.name}
+        className="flex flex-col rounded-xl border border-border bg-card p-6 shadow-sm transition-transform hover:-translate-y-1"
+      >
+        <div className="flex-1">
+          <h4 className="text-lg font-bold text-foreground">
+            {service.name}
+          </h4>
+
+          <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            {service.description}
+          </p>
+
+          <div className="mt-6">
+            <span className="text-2xl font-extrabold text-primary">
+              {formatZar(service.price)}
+            </span>
+
+            <span className="ml-2 text-xs font-semibold text-muted-foreground">
+              {service.priceLabel}
+            </span>
+          </div>
+        </div>
+
+        <a
+          href={service.checkoutUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
+        >
+          Pay online
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </article>
+    ))}
+  </div>
+</div>
 
         <div className="mx-auto mt-24 max-w-5xl border-t border-border pt-16">
   <div className="mb-10 text-center">
     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-      One-off services
+       Tailored services
     </p>
 
     <h3 className="text-3xl font-extrabold text-foreground">
