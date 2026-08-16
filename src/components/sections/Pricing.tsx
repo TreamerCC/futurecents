@@ -1,173 +1,249 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, Plus, Shield, Mail, FileText, UserCircle } from "lucide-react";
-import { Button } from "../ui/button";
+import { ArrowRight, Check, FileText, Mail, Shield, UserCircle } from "lucide-react";
 
-const tiers = [
+const checkoutLinks = {
+  taxLite: "https://whop.com/future-cents/tax-lite/",
+  bookkeepingLite: "https://whop.com/future-cents/bookkeeping-lite/",
+  fullSmeSupport: "https://whop.com/future-cents/full-sme-support/",
+  companySetup: "https://whop.com/future-cents/company-setup-registrations/",
+};
+
+const packages = [
   {
-    name: "Basic",
-    description: "Perfect for freelancers and solo founders starting out.",
-    monthlyPrice: 1500,
+    name: "Tax Lite",
+    description:
+      "Essential tax support for individuals, freelancers, and small businesses.",
+    price: 1500,
+    billing: "month",
+    checkoutUrl: checkoutLinks.taxLite,
     features: [
-      "Monthly bookkeeping (up to 50 txns)",
-      "Basic income & expense tracking",
-      "Annual income tax return (Individual)",
-      "Email support (48hr response)"
-    ]
+      "SARS due-date reminders",
+      "One annual tax return",
+      "One consultation per quarter",
+      "WhatsApp support during business hours",
+    ],
   },
   {
-    name: "Standard",
-    description: "The sweet spot for growing VAT-registered SMEs.",
-    monthlyPrice: 3000,
-    popular: true,
+    name: "Bookkeeping Lite",
+    description:
+      "Practical monthly bookkeeping for businesses that need clearer financial records.",
+    price: 2500,
+    billing: "month",
+    checkoutUrl: checkoutLinks.bookkeepingLite,
     features: [
-      "Monthly bookkeeping (up to 200 txns)",
-      "VAT calculations & submissions",
-      "Payroll administration (up to 5 staff)",
+      "Four hours of bookkeeping",
+      "Monthly income statement",
+      "Quarterly tax estimate",
+      "Expense categorisation",
+      "Twenty invoice captures",
+    ],
+  },
+  {
+    name: "Full SME Support",
+    description:
+      "A complete outsourced finance service for growing small and medium businesses.",
+    price: 5500,
+    billing: "month",
+    checkoutUrl: checkoutLinks.fullSmeSupport,
+    features: [
+      "Full bookkeeping up to 50 transactions",
       "Monthly management reports",
-      "Priority email & WhatsApp support"
-    ]
+      "Tax calculations",
+      "Payroll for up to eight employees",
+      "Annual tax return",
+      "Priority WhatsApp support",
+      "Free templates, cash-flow tools, and tax pack",
+    ],
   },
-  {
-    name: "Professional",
-    description: "Full outsourced finance function for established teams.",
-    monthlyPrice: 5500,
-    features: [
-      "Unlimited monthly bookkeeping",
-      "Full tax compliance (VAT, PAYE)",
-      "Payroll administration (up to 15 staff)",
-      "Annual Financial Statements",
-      "Quarterly advisory sessions",
-      "Dedicated account manager"
-    ]
-  }
 ];
 
-export function Pricing() {
-  const [isAnnual, setIsAnnual] = useState(false);
+const quoteServices = [
+  {
+    name: "Company Amendments",
+    price: "Quote",
+    description: "Changes and updates based on your company requirements.",
+  },
+  {
+    name: "Annual Financial Statements",
+    price: "Quote",
+    description: "Financial statements prepared according to your business needs.",
+  },
+  {
+    name: "Tax Return / ITR14",
+    price: "Quote",
+    description: "Tax return support with pricing based on the complexity of your return.",
+  },
+  {
+    name: "Monthly Payroll",
+    price: "Quote",
+    description: "Payroll support priced according to your employee and payroll requirements.",
+  },
+];
 
+function formatZar(amount: number) {
+  return new Intl.NumberFormat("en-ZA", {
+    style: "currency",
+    currency: "ZAR",
+    maximumFractionDigits: 0,
+  }).format(amount);
+}
+
+function scrollToContact() {
+  document.querySelector("#contact")?.scrollIntoView({
+    behavior: "smooth",
+  });
+}
+
+export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-background">
+    <section id="pricing" className="bg-background py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-primary font-semibold tracking-wider uppercase text-sm mb-3">Transparent Pricing</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4">No surprises. No hidden fees.</h3>
-          <p className="text-muted-foreground text-lg mb-8">
-            Choose a retainer that fits your volume, or contact us for a custom quote.
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+            FutureCents packages
           </p>
 
-          <div className="flex items-center justify-center gap-3">
-            <span className={`text-sm font-medium ${!isAnnual ? "text-foreground" : "text-muted-foreground"}`}>Monthly</span>
-            <button 
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="w-14 h-7 rounded-full bg-primary relative p-1 transition-colors outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
-            >
-              <motion.div 
-                className="w-5 h-5 bg-white rounded-full shadow-sm"
-                animate={{ x: isAnnual ? 28 : 0 }}
-                transition={{ type: "spring", stiffness: 500, damping: 30 }}
-              />
-            </button>
-            <span className={`text-sm font-medium ${isAnnual ? "text-foreground" : "text-muted-foreground"}`}>Annually</span>
-            <span className="ml-2 bg-secondary/20 text-primary text-xs font-bold px-2 py-0.5 rounded-full">Save 15%</span>
-          </div>
+          <h2 className="mb-5 text-4xl font-extrabold tracking-tight text-foreground md:text-5xl">
+            Choose the support your business needs.
+          </h2>
+
+          <p className="text-lg leading-8 text-muted-foreground">
+            Select a monthly service package and pay securely online through
+            Whop. If you need a tailored service, request a quote from our
+            team.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-          {tiers.map((tier, index) => {
-            const price = isAnnual ? Math.round(tier.monthlyPrice * 0.85) : tier.monthlyPrice;
-            
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`relative bg-white rounded-2xl border ${
-                  tier.popular ? "border-primary shadow-xl" : "border-border shadow-sm"
-                } p-8 flex flex-col group`}
+        <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-3">
+          {packages.map((pkg, index) => (
+            <motion.article
+              key={pkg.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-sm transition-transform hover:-translate-y-1"
+            >
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-foreground">
+                  {pkg.name}
+                </h3>
+
+                <p className="mt-3 min-h-[72px] text-sm leading-6 text-muted-foreground">
+                  {pkg.description}
+                </p>
+
+                <div className="mt-7 flex items-end gap-2">
+                  <span className="text-4xl font-extrabold text-primary">
+                    {formatZar(pkg.price)}
+                  </span>
+                  <span className="pb-1 text-sm font-semibold text-muted-foreground">
+                    /{pkg.billing}
+                  </span>
+                </div>
+
+                <div className="mt-7 border-t border-border pt-6">
+                  <p className="mb-4 text-xs font-bold uppercase tracking-wider text-primary">
+                    Included
+                  </p>
+
+                  <ul className="space-y-3">
+                    {pkg.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex gap-3 text-sm leading-6 text-muted-foreground"
+                      >
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <a
+                href={pkg.checkoutUrl}
+                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
               >
-                {tier.popular && (
-                  <>
-                    <div className="absolute inset-0 rounded-2xl border-2 border-secondary/50 animate-pulse pointer-events-none" />
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-secondary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
-                      Most Popular
-                    </div>
-                  </>
-                )}
-                
-                <div className="mb-6 mt-2">
-                  <h4 className="text-xl font-bold text-foreground mb-2">{tier.name}</h4>
-                  <p className="text-sm text-muted-foreground h-10">{tier.description}</p>
-                </div>
-                
-                <div className="mb-6 flex flex-col justify-center min-h-[4.5rem]">
-                  {isAnnual && (
-                    <span className="text-sm text-muted-foreground line-through decoration-destructive decoration-2">
-                      R{tier.monthlyPrice.toLocaleString()}
-                    </span>
-                  )}
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-extrabold text-foreground">R{price.toLocaleString()}</span>
-                    <span className="text-muted-foreground text-sm">/mo</span>
-                  </div>
-                  {isAnnual && <span className="text-xs text-secondary font-medium mt-1">Billed annually at R{(price * 12).toLocaleString()}</span>}
-                </div>
-                
-                <ul className="space-y-4 mb-8 flex-1">
-                  {tier.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 text-sm text-foreground">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span className="leading-snug">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button 
-                  variant={tier.popular ? "default" : "outline"} 
-                  className={`w-full ${tier.popular ? "shadow-md" : ""}`}
-                  onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
-                >
-                  Get Started
-                </Button>
-              </motion.div>
-            )
+                Pay online
+                <ArrowRight className="h-4 w-4" />
+              </a>
+
+              <p className="mt-3 text-center text-xs text-muted-foreground">
+                Secure checkout hosted by Whop
+              </p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-4 md:grid-cols-4">
+          {[
+            { icon: UserCircle, text: "Dedicated point of contact" },
+            { icon: Shield, text: "Secure document handling" },
+            { icon: FileText, text: "SARS correspondence support" },
+            { icon: Mail, text: "Monthly financial summary" },
+          ].map((item) => {
+            const Icon = item.icon;
+
+            return (
+              <div
+                key={item.text}
+                className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center shadow-sm"
+              >
+                <Icon className="h-6 w-6 text-primary" />
+                <span className="text-xs font-semibold text-foreground">
+                  {item.text}
+                </span>
+              </div>
+            );
           })}
         </div>
 
-        <div className="max-w-4xl mx-auto mb-16">
-          <h4 className="text-center font-bold text-lg mb-6">Included in all plans</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: UserCircle, text: "Dedicated point of contact" },
-              { icon: Shield, text: "Secure document portal" },
-              { icon: FileText, text: "SARS correspondence management" },
-              { icon: Mail, text: "Monthly financial summary email" }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center text-center gap-3 p-6 bg-white rounded-xl border border-border shadow-sm">
-                <item.icon className="w-6 h-6 text-primary" />
-                <span className="text-sm font-semibold text-foreground">{item.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <div className="mx-auto mt-24 max-w-5xl border-t border-border pt-16">
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              One-off services
+            </p>
 
-        <div className="max-w-4xl mx-auto border-t border-border pt-12">
-          <div className="text-center mb-8">
-            <h4 className="text-lg font-bold text-foreground mb-2">Popular Once-Off Add-ons</h4>
-            <p className="text-muted-foreground text-sm">Need a specific service? We handle these individually.</p>
+            <h3 className="text-3xl font-extrabold text-foreground">
+              Need something more specific?
+            </h3>
+
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Request a quote for services that depend on your company size,
+              records, employee count, or filing requirements.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: "Company Registration", price: "R1,800" },
-              { name: "CIPC Annual Return", price: "R650" },
-              { name: "Tax Clearance", price: "R500" },
-              { name: "VAT Registration", price: "R2,500" }
-            ].map((addon, i) => (
-              <div key={i} className="flex justify-between items-center p-4 bg-white rounded-lg border border-border hover:border-primary transition-colors group">
-                <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{addon.name}</span>
-                <span className="text-sm font-bold text-secondary">{addon.price}</span>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            {quoteServices.map((service) => (
+              <div
+                key={service.name}
+                className="flex flex-col justify-between gap-6 rounded-xl border border-border bg-card p-6 shadow-sm md:flex-row md:items-center"
+              >
+                <div>
+                  <h4 className="text-lg font-bold text-foreground">
+                    {service.name}
+                  </h4>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {service.description}
+                  </p>
+                </div>
+
+                <div className="flex shrink-0 flex-col items-start gap-3 md:items-end">
+                  <span className="text-lg font-extrabold text-secondary-foreground">
+                    {service.price}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={scrollToContact}
+                    className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Request a quote
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
