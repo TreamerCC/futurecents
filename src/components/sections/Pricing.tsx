@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Check,
-  FileText,
-  Mail,
-  Shield,
-  UserCircle,
-} from "lucide-react";
+import { ArrowRight, Check, FileText, Mail, Shield, UserCircle } from "lucide-react";
 
 const checkoutLinks = {
   taxLite: "https://whop.com/future-cents/tax-lite/",
@@ -20,7 +13,7 @@ const packages = [
     name: "Tax Lite",
     description:
       "Essential tax support for individuals, freelancers, and small businesses.",
-    price: 1500,
+    price: 11100,
     billing: "month",
     checkoutUrl: checkoutLinks.taxLite,
     features: [
@@ -67,25 +60,26 @@ const packages = [
 const quoteServices = [
   {
     name: "Company Amendments",
-    description:
-      "Company changes and updates priced according to the work required.",
+    price: "Quote",
+    description: "Changes and updates based on your company requirements.",
   },
   {
     name: "Annual Financial Statements",
-    description:
-      "Financial statements prepared according to your business requirements.",
+    price: "Quote",
+    description: "Financial statements prepared according to your business needs.",
   },
   {
     name: "Tax Return / ITR14",
-    description:
-      "Tax return assistance with pricing based on the complexity of your return.",
+    price: "Quote",
+    description: "Tax return support with pricing based on the complexity of your return.",
   },
   {
     name: "Monthly Payroll",
-    description:
-      "Payroll support priced according to your employee and payroll requirements.",
+    price: "Quote",
+    description: "Payroll support priced according to your employee and payroll requirements.",
   },
 ];
+
 function formatZar(amount: number) {
   return new Intl.NumberFormat("en-ZA", {
     style: "currency",
@@ -102,10 +96,7 @@ function scrollToContact() {
 
 export function Pricing() {
   return (
-    <section
-    id="pricing"
-    className="scroll-mt-28 bg-background py-24"
-  >
+    <section id="pricing" className="bg-background py-24">
       <div className="container mx-auto px-6">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
@@ -118,7 +109,8 @@ export function Pricing() {
 
           <p className="text-lg leading-8 text-muted-foreground">
             Select a monthly service package and pay securely online through
-            Whop. If you need a tailored service, request a quote from our team.
+            Whop. If you need a tailored service, request a quote from our
+            team.
           </p>
         </div>
 
@@ -208,50 +200,55 @@ export function Pricing() {
         </div>
 
         <div className="mx-auto mt-24 max-w-5xl border-t border-border pt-16">
-  <div className="mb-10 text-center">
-    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-      One-off services
-    </p>
+          <div className="mb-10 text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              One-off services
+            </p>
 
-    <h3 className="text-3xl font-extrabold text-foreground">
-      Need something more specific?
-    </h3>
+            <h3 className="text-3xl font-extrabold text-foreground">
+              Need something more specific?
+            </h3>
 
-    <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-      Request a quote for services that depend on your company size,
-      records, employee count, or filing requirements.
-    </p>
-  </div>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+              Request a quote for services that depend on your company size,
+              records, employee count, or filing requirements.
+            </p>
+          </div>
 
-  <div className="grid gap-4 md:grid-cols-2">
-    {quoteServices.map((service) => (
-      <div
-        key={service.name}
-        className="flex flex-col justify-between gap-6 rounded-xl border border-border bg-card p-6 shadow-sm transition-colors hover:border-primary md:flex-row md:items-center"
-      >
-        <div>
-          <h4 className="text-lg font-bold text-foreground">
-            {service.name}
-          </h4>
+          <div className="grid gap-4 md:grid-cols-2">
+            {quoteServices.map((service) => (
+              <div
+                key={service.name}
+                className="flex flex-col justify-between gap-6 rounded-xl border border-border bg-card p-6 shadow-sm md:flex-row md:items-center"
+              >
+                <div>
+                  <h4 className="text-lg font-bold text-foreground">
+                    {service.name}
+                  </h4>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    {service.description}
+                  </p>
+                </div>
 
-          <p className="mt-2 text-sm leading-6 text-muted-foreground">
-            {service.description}
-          </p>
+                <div className="flex shrink-0 flex-col items-start gap-3 md:items-end">
+                  <span className="text-lg font-extrabold text-secondary-foreground">
+                    {service.price}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={scrollToContact}
+                    className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                  >
+                    Request a quote
+                    <ArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <button
-          type="button"
-          onClick={scrollToContact}
-          className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
-        >
-          Request a quote
-          <ArrowRight className="h-4 w-4" />
-        </button>
       </div>
-    ))}
-  </div>
-</div>
-</div>
     </section>
   );
 }

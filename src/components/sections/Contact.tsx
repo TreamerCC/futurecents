@@ -45,10 +45,7 @@ export function Contact() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-xl"></div>
               
               <div className="relative z-10">
-              <p className="text-muted-foreground">
-  Tell us which service you need and a little about your business. We’ll
-  review your requirements and respond with a tailored quote.
-</p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's sort out your finances.</h2>
                 <p className="text-primary-foreground/80 mb-12 max-w-md text-lg">
                   Whether you need a full accounting team or just someone to handle your tax submissions, we're ready to help.
                 </p>
@@ -138,8 +135,8 @@ export function Contact() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold text-foreground">Which service do you need a quote for?</label>
-                    <Textarea {...register("message")} placeholder="Tell us which service you need, your business type, and anything else we should know..." className="bg-background resize-none h-32 py-3" />
+                    <label className="text-sm font-semibold text-foreground">How can we help?</label>
+                    <Textarea {...register("message")} placeholder="Tell us what you're looking for..." className="bg-background resize-none h-32 py-3" />
                     {errors.message && <p className="text-destructive text-xs">{errors.message.message}</p>}
                   </div>
 
