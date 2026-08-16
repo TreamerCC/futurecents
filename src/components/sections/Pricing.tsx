@@ -27,7 +27,7 @@ const packages = [
     name: "Bookkeeping Lite",
     description:
       "Practical monthly bookkeeping for businesses that need clearer financial records.",
-    price: 2500,
+    price: 25000,
     billing: "month",
     checkoutUrl: checkoutLinks.bookkeepingLite,
     features: [
