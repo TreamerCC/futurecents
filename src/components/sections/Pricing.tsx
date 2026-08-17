@@ -227,7 +227,7 @@ export function Pricing() {
                 href={pkg.checkoutUrl}
                 className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
               >
-                Pay online
+                Get Access
                 <ArrowRight className="h-4 w-4" />
               </a>
 
@@ -307,7 +307,7 @@ export function Pricing() {
           rel="noopener noreferrer"
           className="mt-6 inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-bold text-primary-foreground transition-transform hover:-translate-y-0.5"
         >
-          Pay online
+          Get In Touch
           <ArrowRight className="h-4 w-4" />
         </a>
       </article>
